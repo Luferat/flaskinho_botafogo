@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Flaskinho - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        <a href="{{ url_for('about') }}" class="navbar-item">Sobre</a>
+        <a href="{{ url_for('contact') }}" class="navbar-item">Contato</a>
+    </nav>
+
+    <main>{% block content %}{% endblock %}</main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Joca da Silva</p>
+    </footer>
+</body>
+
+</html>

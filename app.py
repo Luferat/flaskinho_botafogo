@@ -1,15 +1,22 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route('/')
-def hello():
-    return 'Hello, World!<p>Que legal!</p>'
+def home():
+    # Aqui entra a lógica para a página inicial
+    # Códigos Python
+    return render_template('home.html')
 
 
 @app.route('/about')
 def about():
-    return 'Sobre...'
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':

@@ -1,56 +1,67 @@
-# flaskinho
-Experimentos com Python / Flask para criação de um aplicativo Web.
+# Flaskinho
 
-Python 3.13
+Criando um aplicativo Web fullstack experimental com Python e Flask.
 
-## Ambiente Virtual
-```
-python -m venv .venv
-```
-Para uma versão específica do Python:
-```
-python3.13 -m venv .venv
-```
+## Estrutura do Aplicativo
 
-Para ativar o `venv`:
-```
-.venv\Scrits\activate
-```
+- [ ] No VSCode, crie a estrutura conforme o modelo.
+- [ ] Abra `app.py`.
+- [ ] Verifique se o VSCode reconhece o versão do Python correta (rodapé à direita).
 
-Caso precisa desativar:
-```
-.venv\Scripts\deactivate.bat
+
+## Ambiente virtual
+
+- [ ] Criando o ambiente virtual (venv) usando `Python 3.12`
+```cmd
+python3.12 -m venv .venv
 ```
 
-> _OBS: Verifique se o VSCode está usando o mesmo "venv"._
+> _Troque `python3.12` pela versão mais recente do Python, obtida da loja da Microsoft ou baixada da Internet._
+
+- [ ] Ativando o venv
+```cmd
+.venv/Scripts/activate
+```
+
+- [ ] Se precisar desativar o venv
+```cmd
+.venv/Scripts/deactivate.tab
+```
+
+- [ ] Ao ativar o `venv`, certifique-se que o VSCode está no contexto dele (rodapé à direita).
 
 ## Dependências
 
-Instalando o Flask:
-```
-pip install flask
-```
-
-Criando a lista de dependências:
-```
-pip freeze > dependencies.txt
+- [ ] Instale o Flask
+```cmd
+pip install Flask
 ```
 
-Caso precise baixar as dependências novamente:
-```
-pip install -r dependencies.txt
+- [ ] Crie/atualize a lista de dependências
+```cmd
+pip freeze > requirements.txt
 ```
 
-> _Dica: sempre que instalar uma nova dependência gere o 'dependencies.txt' novamente._
-
-## Rodando o Aplicativo
-
+- [ ] Quando clonar e reinstalar este aplicativo, para baixar todas as dependências
+```cmd
+pip install -r requirements.txt
 ```
+
+## Rodando o aplicativo
+
+- [ ] Defina o aplicativo de entrada, o modo "debug" e execute
+```cmd
+set FLASK_APP=app.py
+set FLASK_ENV=development
 flask run
 ```
-ou
-```
+Ou
+```cmd
 python app.py
 ```
+O prompt deve ficar aberto e ativo porque está rodando o serviço do Flask.
 
-ou ainda, clicar no botão "Play" do VSCode quando `app.py` estiver aberto.
+Também é possível rodar pelo próprio VSCode, abrindo `app.py` e clicando no triângulo (Play).
+
+Ao rodar, observe o endereço de entrada, normalmente `http://127.0.0.1:5000` e abra-o no navegador.
+
