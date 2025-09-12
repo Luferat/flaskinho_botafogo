@@ -65,3 +65,10 @@ Também é possível rodar pelo próprio VSCode, abrindo `app.py` e clicando no 
 
 Ao rodar, observe o endereço de entrada, normalmente `http://127.0.0.1:5000` e abra-o no navegador.
 
+## Sugestões de UPDATE
+
+ - Login de usuário → Cookies
+ - Cadastrar novo item
+ - Ao listar um item, o dono (owner) pode editar ou apagar
+ - Criar outras página
+ - Dar um objetivo ao aplicativo
