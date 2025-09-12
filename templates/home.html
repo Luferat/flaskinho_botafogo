@@ -1,7 +1,27 @@
 {% extends '_base.html' %}
 
+{% block title %}Início{% endblock %}
+
 {% block content %}
-<h1>{% block title %}Hello, World!{% endblock %}</h1>
-<h2>Essa é a página inicial!</h2>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, doloribus dolore veniam consectetur ratione earum, architecto nobis ea blanditiis cumque sequi, deserunt sint corrupti veritatis nihil ex aspernatur provident sed!</p>
+
+<h2>Itens ativos</h2>
+<p>Itens ordenados pela data mais recente.<br>Clique em um item para ver os detalhes.</p>
+<div class="cards-container">
+
+    {% for thing in things %}
+
+    <a href="#" class="card-link">
+        <div class="card">
+            <img src="{{ thing[2] }}" alt="{{ thing[1] }}" class="card-img">
+            <div class="card-body">
+                <h2 class="card-title">{{ thing[1] }}</h2>
+                <p class="card-owner">{{ thing[3] }}</p>
+            </div>
+        </div>
+    </a>
+
+    {% endfor %}
+
+</div>
+
 {% endblock %}

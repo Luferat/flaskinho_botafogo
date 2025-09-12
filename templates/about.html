@@ -1,7 +1,26 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h1>{% block title %}Sobre {% endblock %}</h1>
-<h2>Esta é a página "Sobre"!</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, saepe totam maiores laborum reiciendis quia quibusdam nemo neque assumenda magnam vel iure ullam sequi inventore a? In voluptatum sint deserunt?</p>
+
+<h2>{% block title %}Sobre {% endblock %}</h2>
+<div class="about-content">
+        <p class="center"><img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Descrição"></p>
+    <p>Este é um experimento de site da Web construído com <a href="https://www.python.org/downloads/"
+            target="_blank">Python</a> usando o framework minimalista
+        <a href="https://flask.palletsprojects.com/en/stable/" target="_blank">Flask</a> e o banco de dados <a
+            href="https://sqlite.org/index.html" target="_blank">SQLite</a>.
+    </p>
+    <p>Este aplicativo foi desenvolvido de forma colaborativa com o <a
+            href="https://github.com/features/copilot?locale=pt-BR" target="_blank">GitHub Copilot</a> no <a
+            href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>.</p>
+    <p>Para obter o código fonte, instruções e para colaborar com o projeto, acesse o repositório oficial no <a
+            href="https://github.com/Luferat/flask_vanilla" target="_blank">GitHub</a>.</p>
+    <p>Caso precise acessar o banco de dados diretamente, sugiro a ferramenta <a href="https://sqlitebrowser.org/dl/"
+            target="_blank">DB Browser</a> que é leve e fácil de usar.</p>
+    <p>Para experimentos de hospedagem de forma gratuita você pode usar o <a href="https://www.pythonanywhere.com/"
+            target="_blank">Pythonanywhere</a> que, inclusive, dá suporte a bancos de dados <a
+            href="https://www.mysql.com/" target="_blank">MySQL</a> de forma limitada.</p>
+    <p><em>Sorte e sucesso!</em></p>
+</div>
+
 {% endblock %}

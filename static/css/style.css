@@ -1,23 +1,61 @@
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
-html, body {
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
 }
 
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: orangered;
+}
+
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
-    background-color: lightslategray;
-    font-size: 1em;    
+    background-color: rgb(98, 128, 158);
+    font-size: 1em;
     color: white;
-    padding: 8px 5px 8px 5px;
+    padding: .5rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav h1 {
+    margin: 0;
+    margin-right: auto;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+nav h1 a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 nav a {
@@ -25,27 +63,194 @@ nav a {
     color: inherit;
 }
 
-.navbar-brand {
-    font-size: 1.2em;
-    font-weight: 600;
-}
-
 .navbar-item {
     font-variant: small-caps;
-    margin-left: 30px;
+    margin-left: 1rem
 }
 
 main {
-    padding: 2rem 1rem 4rem 1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-grow: 1;
+    padding: 3rem 2rem 2rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer {
-    background-color: lightslategray;
+    background-color: rgb(98, 128, 158);
     color: white;
     text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
+}
+
+footer a {
+    color: white;
+}
+
+#contact-form {
+    max-width: 540px;
+    margin-top: 1rem;
+    margin: auto
+}
+
+#contact-form div {
+    padding: .5rem 0;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: .3rem;
+    font-weight: 600;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: .4rem;
+    font-size: inherit;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(255, 202, 202);
+    border: 1px solid red;
+    border-bottom: 3px solid red;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 6rem;
+}
+
+#contact-form button {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: .7rem 1.2rem;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+#contact-form input:valid,
+#contact-form textarea:valid {
+    border: 1px solid #ccc;
+    border-bottom: 3px solid green;
+    background-color: rgb(232, 240, 254);
+}
+
+#contact-form:valid button {
+    pointer-events: all;
+    background-color: steelblue;
+    cursor: pointer;
+}
+
+.success-message {
+    display: table;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+p.center {
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    width: 250px;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 0rem;
+    width: 100%;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 0.5em 0 0.2em 0;
+}
+
+.card-owner {
+    color: #888;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+/* Responsividade */
+@media (max-width: 626px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90vw;
+        max-width: 320px;
+    }
+
+    .card-owner {
+        margin-bottom: 1rem;
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.view-item {
+    width: 100%;
+    max-width: 540px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.view-item hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px dotted grey;
+}
+
+.view-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    display: table;
+    margin: auto;
 }

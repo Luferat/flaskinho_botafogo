@@ -3,22 +3,28 @@
 
 <head>
     <meta charset="utf-8" />
+    <!-- O título da página é definido dinamicamente -->
     <title>Flaskinho - {% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
 </head>
 
 <body>
-    <nav>
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-        <a href="{{ url_for('about') }}" class="navbar-item">Sobre</a>
-        <a href="{{ url_for('contact') }}" class="navbar-item">Contato</a>
-    </nav>
-
-    <main>{% block content %}{% endblock %}</main>
-    
-    <footer class="footer">
-        <p>&copy; 2025 Joca da Silva</p>
-    </footer>
+    <div id="wrap">
+        <nav>
+            <h1><a href="{{ url_for('home') }}">&#128230; Flaskinho</a></h1>
+            <!-- <a href="{{ url_for('home') }}" class="navbar-item">Início</a> -->
+            <a href="{{ url_for('contact') }}" class="navbar-item">Contatos</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">Sobre</a>
+        </nav>
+        <main>{% block content %}{% endblock %}</main>
+        <footer class="footer">
+            <p>
+                &copy; 2025 Joca da Silva<br>
+                <small><a href="{{ url_for('about') }}">Sobre</a> &bull; <a href="#privacy">Sua Privacidade</a></small>
+            </p>
+        </footer>
+    </div>
 </body>
 
 </html>

@@ -1,9 +1,49 @@
 {% extends '_base.html' %}
 
-{% block title %}Faça Contato{% endblock %}
-
 {% block content %}
-<h1>Faça Contato</h1>
-<h2>Esta é a página de contatos!</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, saepe totam maiores laborum reiciendis quia quibusdam nemo neque assumenda magnam vel iure ullam sequi inventore a? In voluptatum sint deserunt?</p>
+
+<h2>{% block title %}Faça Contato!{% endblock %}</h2>
+
+{% if success %}
+
+<div class="success-message">
+    <h3>Olá {{ fname }}!</h3>
+    <blockquote>Seu contato foi enviado com sucesso!</blockquote>
+    <blockquote>Se necessário, responderemos em breve.</blockquote>
+    <p><em>Obrigado...</em></p>
+</div>
+
+{% else %}
+
+<form action="/contact" method="post" id="contact-form">
+    <p>Preencha o formulário abaixo para entrar em contato conosco!</p>
+    <div>
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name" required minlength="2" placeholder="Seu nome social" />
+    </div>
+    <div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required placeholder="Seu e-mail principal" />
+    </div>
+    <div>
+        <label for="subject">Assunto:</label>
+        <input type="text" name="subject" id="subject" required minlength="4" placeholder="Assunto do contato" />
+    </div>
+    <div>
+        <label for="message">Mensagem:</label>
+        <textarea name="message" id="message" required minlength="5"
+            placeholder="Escreva sua mensagem aqui..."></textarea>
+    </div>
+    <div>
+        <button type="submit">Enviar</button>
+        <small>← Clique somente uma vez.</small>
+    </div>
+</form>
+
+{% endif %}
+
+<p class="center"><a href="{{ url_for('home') }}">← Voltar</a></p>
+
+<script>if (window.history.replaceState) { window.history.replaceState(null, null, window.location.href); }</script>
+
 {% endblock %}
